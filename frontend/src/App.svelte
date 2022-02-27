@@ -1,6 +1,8 @@
 <script>
+  import { Router } from 'svelte-router-spa';
+  import { routes } from './routes';
 </script>
 
 <main>
-  <h1>Hello there!</h1>
+  <Router {routes} />
 </main>
