@@ -1,1 +1,1 @@
-<h2>Home</h2>
+<h1 class="title is-4">Home</h1>

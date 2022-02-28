@@ -15,11 +15,8 @@
   });
 </script>
 
-<main>
-  <h3>Admin Layout</h3>
-  <section>
-    {#if initialized}
-      <Route {currentRoute} />
-    {/if}
-  </section>
-</main>
+<div>
+  {#if initialized}
+    <Route {currentRoute} />
+  {/if}
+</div>
