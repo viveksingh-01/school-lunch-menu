@@ -1,4 +1,5 @@
 <script>
+  import { Navigate } from 'svelte-router-spa';
   let email;
   let name;
 
@@ -61,7 +62,9 @@
   <div class="content" style="line-height: 30px;">
     <center>
       <span>Already registered?</span>
-      <button class="button is-small is-text">Log in</button>
+      <Navigate to="/admin/manage-menus">
+        <button class="button is-small is-text">Log in</button>
+      </Navigate>
     </center>
   </div>
 </div>
