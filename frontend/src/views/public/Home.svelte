@@ -1,3 +1,12 @@
+<script>
+  let email;
+  let name;
+
+  function register() {
+    alert(`School name is ${name} and email is ${email}`);
+  }
+</script>
+
 <div class="notification">
   <div class="columns">
     <div class="column">
@@ -16,9 +25,10 @@
       <div class="content">
         <h3>Register Now</h3>
         <div class="field">
-          <label class="label">Email Address</label>
+          <label class="label" for="email">Email Address</label>
           <div class="control">
             <input
+              bind:value={email}
               type="text"
               placeholder="Enter your email address"
               class="input"
@@ -26,9 +36,10 @@
           </div>
         </div>
         <div class="field">
-          <label class="label">School Name</label>
+          <label class="label" for="name">School Name</label>
           <div class="control">
             <input
+              bind:value={name}
               type="text"
               placeholder="Enter your school's name"
               class="input"
@@ -37,7 +48,9 @@
         </div>
         <div class="field is-grouped">
           <div class="control">
-            <button class="button is-link is-outlined"> Go </button>
+            <button on:click={register} class="button is-link is-outlined">
+              Go
+            </button>
           </div>
         </div>
       </div>
