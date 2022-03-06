@@ -3,10 +3,12 @@
   import { onMount } from 'svelte';
   import { user } from '../../stores';
 
+  let lunchWeekList = [];
+
   onMount(async () => {
     try {
       const res = await axios.get('http://localhost:3000/api/lunch-week');
-      console.log(res.data);
+      lunchWeekList = res.data;
     } catch (e) {
       console.error(e);
     }
@@ -23,4 +25,18 @@
       </li>
     </ul>
   </nav>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Week Of</th>
+        <th>Published</th>
+      </tr>
+    </thead>
+    {#each lunchWeekList as lunchWeek}
+      <tr>
+        <td>{lunchWeek.weekOf}</td>
+        <td>{lunchWeek.isPublished}</td>
+      </tr>
+    {/each}
+  </table>
 </div>
