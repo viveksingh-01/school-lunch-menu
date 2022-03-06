@@ -1,5 +1,16 @@
 <script>
+  import axios from 'axios';
+  import { onMount } from 'svelte';
   import { user } from '../../stores';
+
+  onMount(async () => {
+    try {
+      const res = await axios.get('http://localhost:3000/api/lunch-week');
+      console.log(res.data);
+    } catch (e) {
+      console.error(e);
+    }
+  });
 </script>
 
 <div>
